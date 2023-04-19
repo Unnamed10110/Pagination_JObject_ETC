@@ -1,0 +1,590 @@
+{
+	"info": {
+		"_postman_id": "628d830c-df69-480d-ad4d-9335c54b63ab",
+		"name": "z - Edge Jobs Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25227162"
+	},
+	"item": [
+		{
+			"name": "test_getallposts",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Test: Retorna 200 - Endpoint: getallposts\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7086/api/V1/tests/allPosts",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7086",
+					"path": [
+						"api",
+						"V1",
+						"tests",
+						"allPosts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test_getonepost",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Test: Retorna 200 - Endpoint: getonepost\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json; charset=UTF-8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:7086/api/V1/tests/getOne/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7086",
+					"path": [
+						"api",
+						"V1",
+						"tests",
+						"getOne",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test_postOne",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Test: Retorna 200 - Endpoint: getallposts\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json; charset=UTF-8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"aa\",\r\n  \"body\": \"string\",\r\n  \"userId\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7086/api/V1/tests/postOne",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7086",
+					"path": [
+						"api",
+						"V1",
+						"tests",
+						"postOne"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test_postOne  (validation)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Test: Retorna 400 (Cuando un campo es inválido) - Endpoint: postOne\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json; charset=UTF-8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"\",\r\n  \"body\": \"string\",\r\n  \"userId\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7086/api/V1/tests/postOne",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7086",
+					"path": [
+						"api",
+						"V1",
+						"tests",
+						"postOne"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test_updateOne",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Test: Retorna 200 - Endpoint: updateOne\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json; charset=UTF-8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 1,\r\n  \"title\": \"string\",\r\n  \"body\": \"string\",\r\n  \"userId\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7086/api/V1/tests/updateOne/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7086",
+					"path": [
+						"api",
+						"V1",
+						"tests",
+						"updateOne",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test_updateOne (validation)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Test: Retorna 400 (Cuando un campo es inválido) - Endpoint: updateOne\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json; charset=UTF-8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 1,\r\n  \"title\": \"string\",\r\n  \"body\": \"\",\r\n  \"userId\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7086/api/V1/tests/updateOne/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7086",
+					"path": [
+						"api",
+						"V1",
+						"tests",
+						"updateOne",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test_deleteonepost",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Test: Retorna 200 - Endpoint: deleteonepost\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json; charset=UTF-8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:7086/api/V1/tests/deleteOne/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7086",
+					"path": [
+						"api",
+						"V1",
+						"tests",
+						"deleteOne",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test_getpostsbyuser",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Test: Retorna 200 - Endpoint: getpostsbyuser\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json; charset=UTF-8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:7086/api/V1/tests/postsByUser?id=1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7086",
+					"path": [
+						"api",
+						"V1",
+						"tests",
+						"postsByUser"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test_allcommentsforPOSTid",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Test: Retorna 200 - Endpoint: allcommentsforPOSTid\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json; charset=UTF-8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:7086/api/V1/tests/allComnentsForId/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7086",
+					"path": [
+						"api",
+						"V1",
+						"tests",
+						"allComnentsForId",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test_allphotosforalbum",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Test: Retorna 200 - Endpoint: allphotosforalbum\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json; charset=UTF-8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:7086/api/V1/tests/allPhotosForAlbum/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7086",
+					"path": [
+						"api",
+						"V1",
+						"tests",
+						"allPhotosForAlbum",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test_allalbumsforid",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Test: Retorna 200 - Endpoint: allalbumsforid\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json; charset=UTF-8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:7086/api/V1/tests/allAlbumsForId/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7086",
+					"path": [
+						"api",
+						"V1",
+						"tests",
+						"allAlbumsForId",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test_alltodoforid",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Test: Retorna 200 - Endpoint: alltodoforid\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json; charset=UTF-8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:7086/api/V1/tests/allTodoForId/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7086",
+					"path": [
+						"api",
+						"V1",
+						"tests",
+						"allTodoForId",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test_allpostsforid",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Test: Retorna 200 - Endpoint: allpostsforid\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json; charset=UTF-8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:7086/api/V1/tests/allPostsForId/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7086",
+					"path": [
+						"api",
+						"V1",
+						"tests",
+						"allPostsForId",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

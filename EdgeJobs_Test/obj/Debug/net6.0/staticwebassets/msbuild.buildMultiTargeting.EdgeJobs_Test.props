@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\EdgeJobs_Test.props" />
+</Project>

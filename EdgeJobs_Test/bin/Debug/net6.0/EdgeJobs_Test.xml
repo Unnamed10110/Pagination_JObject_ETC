@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EdgeJobs_Test</name>
+    </assembly>
+    <members>
+        <member name="M:EdgeJobs_Test.Controllers.HomeController.#ctor(System.Net.Http.IHttpClientFactory)">
+            <summary>
+            Controller global y unico
+            </summary>
+        </member>
+        <member name="M:EdgeJobs_Test.Controllers.HomeController.GetAll(System.Int32,System.Int32)">
+            <summary>
+            Obtener todos los posts
+            </summary>
+        </member>
+        <member name="M:EdgeJobs_Test.Controllers.HomeController.GetOne(System.Int32)">
+            <summary>
+            Obtener un post especifico
+            </summary>
+        </member>
+        <member name="M:EdgeJobs_Test.Controllers.HomeController.PostOne(EdgeJobs_Test.Models.PostModelTest)">
+            <summary>
+            Publicar un post
+            </summary>
+        </member>
+        <member name="M:EdgeJobs_Test.Controllers.HomeController.PutOne(EdgeJobs_Test.Models.PostModelTest,System.Int32)">
+            <summary>
+            Actualizar un post (OBS.: De acuerdo a la api consumida de JSONPLACEHOLDER las operaciones de modificacion son solo mocks)
+            </summary>
+        </member>
+        <member name="M:EdgeJobs_Test.Controllers.HomeController.DeleteOne(System.Int32)">
+            <summary>
+            Borrar un post (OBS.: De acuerdo a la api consumida de JSONPLACEHOLDER las operaciones de modificacion son solo mocks)
+            </summary>
+        </member>
+        <member name="M:EdgeJobs_Test.Controllers.HomeController.GetAllPostsFromUser(System.Int32)">
+            <summary>
+            Obtener posts de un usuario por id
+            </summary>
+        </member>
+        <member name="M:EdgeJobs_Test.Controllers.HomeController.GetAllCommentsForId(System.Int32)">
+            <summary>
+            Obtener todos los comentarios por id
+            </summary>
+        </member>
+        <member name="M:EdgeJobs_Test.Controllers.HomeController.GetAllPhotosForAlbum(System.Int32)">
+            <summary>
+            Obtener todas las fotos por el id del album
+            </summary>
+        </member>
+        <member name="M:EdgeJobs_Test.Controllers.HomeController.GetAllAlbumsForId(System.Int32)">
+            <summary>
+            Obtener todos los albums por id
+            </summary>
+        </member>
+        <member name="M:EdgeJobs_Test.Controllers.HomeController.GetallTodoForId(System.Int32)">
+            <summary>
+            Obtener todos los datos por el id
+            </summary>
+        </member>
+        <member name="M:EdgeJobs_Test.Controllers.HomeController.GetAllPostsForId(System.Int32)">
+            <summary>
+            Obtener todos los posts por id
+            </summary>
+        </member>
+    </members>
+</doc>
