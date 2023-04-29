@@ -28,10 +28,15 @@ namespace EdgeJobs_Test.Controllers
         /// Obtener todos los posts
         /// </summary>
         [HttpGet("allPosts",Name = "getallposts")]
-        public async Task<ActionResult> GetAll([FromHeader] int page, [FromHeader] int numOfElements)
+        public async Task<ActionResult<CustomResponseModel>> GetAll([FromHeader] int page, [FromHeader] int numOfElements)
         {
             var client = httpClientFactory.CreateClient();
+            // JArray
             var request = new HttpRequestMessage(HttpMethod.Get, "https://jsonplaceholder.typicode.com/posts");
+
+            //JOject
+            //var request = new HttpRequestMessage(HttpMethod.Get, "https://dummyjson.com/products/1");
+            
             request.Headers.Add("Accept", "application/json; charset=UTF-8");
 
             var resp = await client.SendAsync(request);
@@ -45,8 +50,15 @@ namespace EdgeJobs_Test.Controllers
             //return new customtestmodel { bodyjson = JsonObject.Parse(response_body)};
             if (resp.IsSuccessStatusCode)
             {
-                return Ok(JsonObject.Parse(JsonConvert.SerializeObject(result, Formatting.Indented)));
-                //return Ok(result);
+                //Json Array
+                return Ok(new CustomResponseModel { 
+                    ResponseStatus=resp.StatusCode.ToString(),
+                    Response= JsonNode.Parse(JsonConvert.SerializeObject(result, Formatting.Indented))// 
+                }
+                );
+
+                //Json string
+                //return Ok(JsonConvert.SerializeObject(serializedResponse,Formatting.Indented));
             }
             else
             {
